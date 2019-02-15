@@ -3,11 +3,20 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
+import { Routes, RouterModule } from '@angular/router';
+import { HomeComponent } from './home/home.component';
+import { FilmsComponent } from './films/films.component';
+
+const appRoutes: Routes = [
+  { path: 'auth/signup', component: HomeComponent }
+];
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    HomeComponent,
+    FilmsComponent
   ],
   imports: [
     BrowserModule
