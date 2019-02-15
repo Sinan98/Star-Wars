@@ -2,20 +2,10 @@
   <div class="container-fluid">
     <ul class="nav navbar-nav">
       <li routerLinkActive="active">
-        <a routerLink="Films">Livres</a>
+        <a routerLink="Home">Home</a>
       </li>
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
       <li routerLinkActive="active">
-        <a routerLink="auth/signup">Créer un compte</a>
-      </li>
-      <li routerLinkActive="active" *ngIf="!isAuth">
-        <a routerLink="auth/signin">Connexion</a>
-      </li>
-      <li>
-        <a (click)="onSignOut()"
-           style="cursor:pointer"
-           *ngIf="isAuth">Déconnexion</a>
+        <a routerLink="Films">Films</a>
       </li>
     </ul>
   </div>

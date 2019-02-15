@@ -7,8 +7,10 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { FilmsComponent } from './films/films.component';
 
+
 const appRoutes: Routes = [
-  { path: 'auth/signup', component: HomeComponent }
+  { path: 'Home', component: HomeComponent },
+  { path: 'Films', component: FilmsComponent }
 ];
 
 @NgModule({
@@ -19,7 +21,8 @@ const appRoutes: Routes = [
     FilmsComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]
