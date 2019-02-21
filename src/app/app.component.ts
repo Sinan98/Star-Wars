@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import * as firebase from 'firebase';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'star-wars';
+  constructor() {
+    var config = {
+      apiKey: "AIzaSyAty6ZAmWpvX8ildRmrMl7m8ShMzzSusFI",
+      authDomain: "star-warss.firebaseapp.com",
+      databaseURL: "https://star-warss.firebaseio.com",
+      projectId: "star-warss",
+      storageBucket: "star-warss.appspot.com",
+      messagingSenderId: "784507467883"
+    };
+    firebase.initializeApp(config);
+  }
 }
