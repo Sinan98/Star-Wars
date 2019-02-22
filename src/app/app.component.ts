@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import * as firebase from 'firebase';
+import { HttpClient } from '@angular/common/http';
+import 'rxjs/add/operator/map';
+
 
 @Component({
   selector: 'app-root',
@@ -7,7 +10,17 @@ import * as firebase from 'firebase';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  constructor() {
+
+  private apiUrl = 'https://swapi.co/api/films';
+  data: any = {};
+
+
+  constructor(private http: HttpClient) {
+
+    console.log('Hello');
+    this.getTitle();
+    this.getData();
+
     var config = {
       apiKey: "AIzaSyAty6ZAmWpvX8ildRmrMl7m8ShMzzSusFI",
       authDomain: "star-warss.firebaseapp.com",
@@ -18,4 +31,18 @@ export class AppComponent {
     };
     firebase.initializeApp(config);
   }
+
+  getData() {
+    return this.http.get(this.apiUrl)
+  }
+
+  getTitle() {
+    this.getData().subscribe(data => {
+      console.log(data);
+      this.data = data
+    })
+  }
+
+
+
 }

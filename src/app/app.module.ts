@@ -21,7 +21,7 @@ const appRoutes: Routes = [
   { path: 'auth/signin', component: SigninComponent},
   { path: 'Home', canActivate: [AuthGuardService], component: HomeComponent },
   { path: 'Films', canActivate: [AuthGuardService], component: FilmsComponent },
-  { path: 'Films/View/:id', canActivate: [AuthGuardService], component: SingleFilmComponent },
+  { path: 'Films/View', canActivate: [AuthGuardService], component: SingleFilmComponent },
   { path: '', redirectTo: 'Home', pathMatch: 'full' },
   { path: '**', redirectTo: 'Home' }
 ];
@@ -44,6 +44,7 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes)
   ],
   providers: [
+    AppComponent,
     AuthService,
     AuthGuardService,
     FilmsServiceService

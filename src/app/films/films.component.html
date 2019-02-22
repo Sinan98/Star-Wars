@@ -1,3 +1,12 @@
-<p>
-  films works!
-</p>
+<div class="row">
+  <div class="col-12">
+    <h2 style="color:yellow; padding-bottom: 30px">Les Filmes Star Wars</h2>
+    <div style="color:white">
+        <ng-container *ngFor="let result of data.results">
+          <h2 routerLink="/Films/View">{{result.title}}</h2>
+          <p>Directeur : {{result.director}}</p>
+          <p>Producteur : {{result.producer}}</p>
+        </ng-container>
+      </div>
+  </div>
+</div>
